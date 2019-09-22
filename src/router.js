@@ -77,7 +77,9 @@ const prepareRoute = (inRoute) => {
 export const navigate = (url, replace = false, queryParams = null, replaceQueryParams = true) => {
 	url = interceptRoute(currentPath, resolvePath(url));
 
-	if (!url || url === currentPath) {
+	// NOTE(Syo): パラメータだけ変える状況あり
+	// if (!url || url === currentPath) {
+	if (!url) {
 		return;
 	}
 
